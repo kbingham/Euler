@@ -47,3 +47,49 @@ char * th(long long x)
     default: return "th"; break;
   }
 }
+
+
+unsigned long getCurTimeInMsec()
+{
+  struct timeval tv;
+
+  if (gettimeofday(&tv, NULL) < 0)
+    return 0;
+
+  return tv.tv_sec * 1000 + tv.tv_usec/1000;
+}
+
+
+char xtod(char c) {
+  if (c>='0' && c<='9') return c-'0';
+  if (c>='A' && c<='F') return c-'A'+10;
+  if (c>='a' && c<='f') return c-'a'+10;
+  return c=0;
+}
+
+unsigned long MeasureTime( void )
+{
+  static unsigned long start = 0;
+  static unsigned long now   = 0;
+
+  if (start == 0)
+  {
+    start = getCurTimeInMsec();
+  }
+  else
+  {
+    now = getCurTimeInMsec();
+    printf("Test took %lu ms\n", now - start);
+    start = now;
+  }
+
+  return start;
+}
+
+void banner(char * txt)
+{
+ printf("**********************************************\n");
+ printf("%s\n", txt);
+ printf("**********************************************\n");
+
+}
