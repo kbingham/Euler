@@ -1,6 +1,6 @@
 #include "common.h"
 
-unsigned int problem1(void)
+int problem1(int argc, char **argv)
 {
   int result = 0;
   int i;
@@ -14,14 +14,9 @@ unsigned int problem1(void)
     }
   }
 
+  printf("Problem1 : The sum of natural numbers up to 1000 which are multiples of 3 and 5 is %d\n", result);
+
   return result;
 }
 
-int main(int argc, char ** argv)
-{
-  ParseArgs(argc, argv);
-  
-  printf("Problem1 : The sum of natural numbers up to 1000 which are multiples of 3 and 5 is %d\n", problem1());
-  
-  return 0;
-}
+SINGLETON_MAIN( problem1 );
