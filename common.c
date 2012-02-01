@@ -21,12 +21,16 @@ int IsPrime(unsigned int x)
   if (1 == x)
     return 0;
 
+  /* First Check */
+  if (0 == x % 2)
+    return 0; /* Divisible by 2 */
+
   /* 
    * We only need to check up to the square root of x
    * As square root operations are expensive, we instead
    * parse until i squared is greater than x
    */
-  for (i = 2; (i*i<=x); i++)
+  for (i = 3; (i*i<=x); i+= 2)
   {
     /* Determine if i is a divisor ... no remainder; no prime! */
     if (0 == x % i)
