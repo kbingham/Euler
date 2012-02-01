@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int verbose;
+extern int verbose;
 
 void ParseArgs(int argc, char ** argv);
 void SetVerbose(int v);
