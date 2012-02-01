@@ -13,6 +13,7 @@ char xtod(char c);
 unsigned long MeasureTime( void );
 void banner(char * txt);
 unsigned int NextPrime(unsigned int current);
+int Factor(long x);
 
 #define SINGLETON_MAIN( target ) \
 int __attribute__((weak))        \
