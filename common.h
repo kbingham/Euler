@@ -12,6 +12,7 @@ unsigned long getCurTimeInMsec();
 char xtod(char c);
 unsigned long MeasureTime( void );
 void banner(char * txt);
+unsigned int NextPrime(unsigned int current);
 
 #define SINGLETON_MAIN( target ) \
 int __attribute__((weak))        \

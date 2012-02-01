@@ -93,3 +93,11 @@ void banner(char * txt)
  printf("**********************************************\n");
 
 }
+
+unsigned int NextPrime(unsigned int current)
+{
+  /* Iterate to the next prime number */
+  while (!IsPrime(++current));
+
+  return current;
+}
