@@ -13,7 +13,7 @@ void ParseArgs(int argc, char ** argv)
 }
 
 /* This will be a useful function in Euler Problems */
-int IsPrime(int x)
+int IsPrime(unsigned int x)
 {
   int i;
 

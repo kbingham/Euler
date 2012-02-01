@@ -6,7 +6,7 @@ extern int verbose;
 
 void ParseArgs(int argc, char ** argv);
 void SetVerbose(int v);
-int IsPrime(int x);
+int IsPrime(unsigned int x);
 char * th(long long x);
 unsigned long getCurTimeInMsec();
 char xtod(char c);
