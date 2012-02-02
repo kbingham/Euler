@@ -4,7 +4,7 @@ LDFLAGS += common.o
 
 LIBRARY = common.o
 TESTS = prime NextPrime IsPrime
-PROBLEMS = problem1 problem2 problem3
+PROBLEMS = problem1 problem2 problem3 problem7
 
 TARGETS = $(LIBRARY) $(TESTS) $(PROBLEMS)
 
