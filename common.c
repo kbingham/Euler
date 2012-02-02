@@ -21,6 +21,9 @@ int IsPrime(unsigned int x)
   if (1 == x)
     return 0;
 
+  if (2 == x)
+    return 1; /* 2 is prime - but will fail the next check */
+
   /* First Check */
   if (0 == x % 2)
     return 0; /* Divisible by 2 */
