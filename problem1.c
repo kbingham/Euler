@@ -4,8 +4,12 @@ int problem1(int argc, char **argv)
 {
   int result = 0;
   int i;
+  unsigned int target = 1000;
 
-  for (i = 0; i < 1000; i++)
+  if (argc > 1)
+    target = atoi(argv[1]);
+
+  for (i = 0; i < target; i++)
   {
     if (i % 3 == 0 || i % 5 == 0)
     {
@@ -14,7 +18,7 @@ int problem1(int argc, char **argv)
     }
   }
 
-  printf("Problem1 : The sum of natural numbers up to 1000 which are multiples of 3 and 5 is %d\n", result);
+  printf("Problem1 : The sum of natural numbers up to %u which are multiples of 3 and 5 is %d\n", target, result);
 
   return result;
 }
