@@ -78,6 +78,7 @@ unsigned long MeasureTime( void )
 {
   static unsigned long start = 0;
   static unsigned long now   = 0;
+  unsigned long difference   = 0;
 
   if (start == 0)
   {
@@ -86,11 +87,28 @@ unsigned long MeasureTime( void )
   else
   {
     now = getCurTimeInMsec();
-    printf("Test took %lu ms\n", now - start);
+    difference = now - start;
+
     start = now;
   }
 
-  return start;
+  return difference;
+}
+
+typedef int (*fmain)(int, char **);
+
+int MeasureFunctionTime( fmain func, int argc, char ** argv)
+{
+  int ret;
+  unsigned long duration;
+
+  MeasureTime(); /* Initialise */
+  ret = func(argc, argv);
+  duration = MeasureTime();
+
+  printf("Execution took %lu ms\n", duration);
+
+  return ret;
 }
 
 void banner(char * txt)
