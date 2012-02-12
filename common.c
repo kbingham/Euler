@@ -154,3 +154,18 @@ int Factor(long x)
 
   return x;
 }
+
+unsigned int SumOfSequentialNumbers( unsigned int From, unsigned int To )
+{
+  unsigned int Qty = To - From + 1;
+  unsigned int Dbl = From + To;
+  unsigned int Sum = ( ( Dbl * Qty ) / 2 );
+
+  return Sum;
+}
+
+unsigned int TriangleNumber( unsigned int Number )
+{
+  /* Triangle Numbers are the sum of the sequential numbers from 1 */
+  return (SumOfSequentialNumbers(1, Number));
+}
