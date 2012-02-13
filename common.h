@@ -19,6 +19,7 @@ int Factor(long x);
 int MeasureFunctionTime( fmain func, int argc, char ** argv);
 unsigned int SumOfSequentialNumbers( unsigned int From, unsigned int To );
 unsigned int TriangleNumber( unsigned int Number );
+unsigned int lcg(void);
 
 #define SINGLETON_MAIN( target ) \
 int __attribute__((weak))        \

@@ -169,3 +169,12 @@ unsigned int TriangleNumber( unsigned int Number )
   /* Triangle Numbers are the sum of the sequential numbers from 1 */
   return (SumOfSequentialNumbers(1, Number));
 }
+
+/* This is the famous LCG based pseudorandom number generator from
+ * 'Numerical Recipies in C'. It will do...
+ */
+unsigned int lcg(void)
+{
+  static unsigned int pattern = 0;
+  return (pattern = 1664525 * pattern + 1013904223);
+}
