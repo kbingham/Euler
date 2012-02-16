@@ -1,12 +1,14 @@
 CFLAGS += -g -Wall -Werror
 
-LDFLAGS += common.o
+LIBRARY = lib/common.o
+CFLAGS += -Ilib/
 
-LIBRARY = common.o
+LDFLAGS += $(LIBRARY)
+
 TESTS = prime NextPrime IsPrime Factor Triangle
 PROBLEMS = problem1 problem2 problem3 problem5 problem6 problem7 problem10 problem12
 
-TARGETS = $(LIBRARY) $(TESTS) $(PROBLEMS)
+TARGETS = $(LIBRARY) $(addprefix src/, $(TESTS) $(PROBLEMS))
 
 all: ${TARGETS}
 
