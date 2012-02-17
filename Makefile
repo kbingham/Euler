@@ -6,7 +6,8 @@ CFLAGS += -Ilib/
 LDFLAGS += $(LIBRARY)
 
 TESTS = prime NextPrime IsPrime Factor Triangle
-PROBLEMS = problem1 problem2 problem3 problem4 problem5 problem6 problem7 problem10 problem12
+PROBLEM_LIST = 1 2 3 4 5 6 7 10 12
+PROBLEMS = $(addprefix problem, $(PROBLEM_LIST))
 
 TARGETS = $(LIBRARY) $(addprefix src/, $(TESTS) $(PROBLEMS))
 
