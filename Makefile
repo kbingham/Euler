@@ -1,3 +1,5 @@
+MAKEFLAGS =+ -j
+
 CFLAGS += -g -Wall -Werror
 
 LIBRARY = lib/common.o
