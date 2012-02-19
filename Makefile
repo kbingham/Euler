@@ -2,7 +2,12 @@ MAKEFLAGS =+ -j
 
 CFLAGS += -g -Wall -Werror
 
-LIBRARY = lib/common.o
+
+LIBRARY_C_FILES = $(shell ls lib/*.c)
+LIBRARY_O_FILES = $(LIBRARY_C_FILES:.c=.o)
+
+LIBRARY = lib/common.a
+
 CFLAGS += -Ilib/
 
 TESTS = prime NextPrime IsPrime Factor Triangle
@@ -13,8 +18,11 @@ TARGETS = $(addprefix src/, $(TESTS) $(PROBLEMS))
 
 all: ${TARGETS}
 
+$(LIBRARY): $(LIBRARY_O_FILES)
+	ar r $(LIBRARY) $(LIBRARY_O_FILES)
+
 ${TARGETS}: $(LIBRARY)
 
 clean:
-	rm $(LIBRARY) ${TARGETS}
+	rm $(LIBRARY) $(LIBRARY_O_FILES) $(TARGETS)
 
