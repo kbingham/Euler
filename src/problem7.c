@@ -8,7 +8,7 @@
 
 int problem7(int argc, char ** argv)
 {
-  int i;
+  int i = 0;
   int found = 0;
   int find = 10001;
 
