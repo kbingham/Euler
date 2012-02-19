@@ -56,7 +56,7 @@ unsigned int TriangleNumber( unsigned int Number )
 }
 
 /* This is the famous LCG based pseudorandom number generator from
- * 'Numerical Recipies in C'. It will do...
+ * 'Numerical Recipes in C'.
  */
 unsigned int lcg(void)
 {
