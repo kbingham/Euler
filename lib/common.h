@@ -2,19 +2,19 @@
 #include <stdlib.h>
 #include <sys/time.h>
 
+#include "prime.h"
+
 extern int verbose;
 
 typedef int (*fmain)(int, char **);
 
 void ParseArgs(int argc, char ** argv);
 void SetVerbose(int v);
-int IsPrime(unsigned int x);
 char * th(long long x);
 unsigned long getCurTimeInMsec();
 char xtod(char c);
 unsigned long MeasureTime( void );
 void banner(char * txt);
-unsigned int NextPrime(unsigned int current);
 int Factor(long x);
 int MeasureFunctionTime( fmain func, int argc, char ** argv);
 unsigned int SumOfSequentialNumbers( unsigned int From, unsigned int To );
