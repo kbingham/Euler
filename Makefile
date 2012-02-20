@@ -12,7 +12,7 @@ LIBRARY = lib/common.a
 CFLAGS += -Ilib/
 
 TESTS = prime NextPrime IsPrime Factor Triangle
-PROBLEM_LIST = 1 2 3 4 5 6 7 8 10 12
+PROBLEM_LIST = 1 2 3 4 5 6 7 8 9 10 12
 
 # Generate a list of all the Problems
 PROBLEMS = $(addprefix problem, $(PROBLEM_LIST))
