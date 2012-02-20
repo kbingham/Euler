@@ -4,6 +4,7 @@ CFLAGS += -g -Wall -Werror
 
 
 LIBRARY_C_FILES = $(shell ls lib/*.c)
+LIBRARY_H_FILES = $(shell ls lib/*.h)
 LIBRARY_O_FILES = $(LIBRARY_C_FILES:.c=.o)
 
 LIBRARY = lib/common.a
@@ -20,6 +21,10 @@ PROBLEMS = $(addprefix problem, $(PROBLEM_LIST))
 TARGETS = $(addprefix src/, $(TESTS) $(PROBLEMS))
 
 all: ${TARGETS}
+
+lib: $(LIBRARY)
+
+$(LIBRARY_O_FILES): $(LIBRARY_H_FILES)
 
 $(LIBRARY): $(LIBRARY_O_FILES)
 	ar r $(LIBRARY) $(LIBRARY_O_FILES)
