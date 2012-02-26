@@ -10,5 +10,6 @@
 
 int 			IsPrime		(unsigned int x);
 unsigned int 	NextPrime	(unsigned int current);
+int				PrimeFactor	(long x);
 
 #endif /* PRIME_H_ */

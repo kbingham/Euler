@@ -9,7 +9,6 @@ extern int verbose;
 
 void ParseArgs(int argc, char ** argv);
 void SetVerbose(int v);
-int Factor(long x);
 unsigned int SumOfSequentialNumbers( unsigned int From, unsigned int To );
 unsigned int TriangleNumber( unsigned int Number );
 unsigned int lcg(void);

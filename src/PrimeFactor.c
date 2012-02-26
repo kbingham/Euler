@@ -6,7 +6,7 @@ int main(int argc, char **argv)
   {
     unsigned int val = atoi (argv[1]);
 
-    Factor(val);
+    PrimeFactor(val);
   }
 
   return 1;

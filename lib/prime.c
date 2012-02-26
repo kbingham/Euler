@@ -5,6 +5,7 @@
  *      Author: kbingham
  */
 
+#include <stdio.h>
 #include "prime.h"
 
 /* This will be a useful function in Euler Problems */
@@ -45,3 +46,32 @@ unsigned int NextPrime(unsigned int current)
 
   return current;
 }
+
+int PrimeFactor(long x)
+{
+  /* Start with the first prime */
+  int prime = 2;
+
+  if (IsPrime(x))
+  {
+    printf("Found prime factor %ld\n", x);
+    return x;
+  }
+
+  /* Find the next prime that divides cleanly */
+  while ( x % prime != 0 )
+    prime = NextPrime(prime);
+
+  printf("Factoring %ld, found prime %d\n", x, prime);
+
+  x /= prime; /* Divide the value by the prime factor */
+
+  /* Shall we continue? */
+  if (!IsPrime(x))
+    PrimeFactor(x);
+  else
+    printf("Found prime factor %ld\n", x);
+
+  return x;
+}
+
